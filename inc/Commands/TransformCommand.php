@@ -11,15 +11,30 @@
 
 namespace BuiltNorth\WPTransformContent\Commands;
 
-// Don't load directly.
-defined('ABSPATH') || exit;
 
 use WP_CLI;
+use WP_CLI_Command;
 use BuiltNorth\WPTransformContent\Transformers\TransformPostType;
 use BuiltNorth\WPTransformContent\Exceptions\TransformException;
 
-class TransformCommand
+class TransformCommand extends WP_CLI_Command
 {
+	public function __construct()
+	{
+		parent::__construct();
+	}
+
+	public function __invoke($args, $assoc_args)
+	{
+		WP_CLI::line('Usage: wp content-transform <subcommand>');
+		WP_CLI::line('');
+		WP_CLI::line('Subcommands:');
+		WP_CLI::line('  post-type    Transform posts from one type to another');
+		WP_CLI::line('');
+		WP_CLI::line('For more information about a subcommand, run:');
+		WP_CLI::line('  wp help content-transform <subcommand>');
+	}
+
 	/**
 	 * Transform posts from one post type to another.
 	 *

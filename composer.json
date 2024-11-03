@@ -35,5 +35,15 @@
 			"composer/installers": true
 		},
 		"sort-packages": true
+	},
+	"extra": {
+		"commands": [
+			"content-transform"
+		],
+		"wp-cli": {
+			"commands": [
+				"content-transform"
+			]
+		}
 	}
 }
