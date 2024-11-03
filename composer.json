@@ -1,0 +1,39 @@
+{
+	"name": "builtnorth/wp-transform-content",
+	"description": "WordPress CLI tool for transforming post types and taxonomies. Easily switch post types and taxonomies.",
+	"type": "wp-cli-package",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Built North",
+			"email": "hello@builtnorth.com"
+		},
+		{
+			"name": "Dan Northern",
+			"email": "contact@dannorthern.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.4",
+		"wp-cli/wp-cli": "^2.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"BuiltNorth\\WPTransformContent\\": "inc/"
+		},
+		"files": [
+			"command.php"
+		]
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		},
+		"sort-packages": true
+	}
+}
